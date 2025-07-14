@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>VGO Idle Clicker</title>
+    </head>
+</html>
+<body>
+    <button id="produce-episode" onclick="g.produceEpisode()">Produce Episode</button> <span id="episodes-per-second">0</span> Episodes per Second ...
+    <span id="episode-counter">0</span> Episodes<br />
+
+    <button id="buy-subscriber" onclick="g.buy('subscriber')">Buy Subscriber</button> for <span id="subscriber-cost">100</span> Episodes ... 
+    <span id="subscriber-counter">0</span> Subscriber<br />
+
+    <button id="buy-cohost" onclick="g.buy('cohost')">Buy Co-Host</button> for <span id="cohost-cost">100</span> Episodes ... 
+    <span id="cohost-counter">0</span> Co-Hosts<br />
+
+    <script src="storeItems.js"></script>
+    <script src="Game.js"></script>
+    <script src="main.js"></script>
+</body>
