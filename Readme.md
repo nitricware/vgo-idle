@@ -6,7 +6,13 @@ In this VGO Idle Clicker game, the goal is to produce as many episodes of VGO as
 
 I want this project to be accessible to as many contributors as possible. Therefor, this project shall only use vanilla JavaScript, HTML and CSS. This project shall not use and JS framework like React, Vue, Angular, etc.! Anyone with a GitHub account can contribute by adding issues (bugs, ideas, feature requests) or sending pull requests. Even if you don't have a GitHub account, just send me a message in the VGO Discord!
 
-## Store Items
+## How To run the game
+
+Download the repository, and double click on `src/index.html`. Have fun!
+
+## Content
+
+### Store Items
 
 | Store Item | Cost | Auto Produce per Second | Reason why it produces episodes |
 |:--|:--|:--|:--|
