@@ -7,7 +7,7 @@ let boostStore = {
     },
     michellesBraunLaser: {
         boostedItem: "cohost",
-        cost: 1,
+        cost: 10000,
         itemMultiplier: 100,
         lifeTime: 10
     }

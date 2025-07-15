@@ -17,15 +17,22 @@ Download the repository, and double click on `src/index.html`. Have fun!
 | Store Item | Cost | EPS<sup>1</sup> | Reason why it produces episodes |
 |:--|:--|:--|:--|
 | Subscriber | 15 | 0.1 | You are so motivated, that producing episodes doesn't feel like producing them on your own. |
-| Tiger | 100 | 1 | Well, it's Tiger. |
+| Location's | 100 | 1 | You gotta be somewhere. Fort Wayne, maybe, or trapped somewhere. |
 | High Quality Equipment | 1.100 | 8 | The better the quality, the easier production becomes |
 | Special Episodes | 12.000 | 47 | Special Episodes makes production motivating again. |
+| You Mothers | 130.000 | 260 | Can't have enough of those! |
 
 <hr />
 <sup>1</sup> Episodes Per Second
 
 ### Ideas
 
-- Unklock hosts (current and historical): Hosts grant special production for a limited time;
-- Unlock Mixer: ???
-- Unlock John's Smoker: Boots someone's EPS
+- Boost (functionality: done) - temporarily boosts store item's EPS
+  - John's Smoker
+  - Michelle's Braun Laser
+  - Matt's Golden Game Stop Card
+  - Tiger's ???
+  - Ry's ???
+- Upgrades (functionality: -) - permanently boosts store item's EPS
+- Unklock hosts (current and historical) - Boost all store item's EPS
+- Unlock Mixer: ??? (mini game?)

@@ -9,11 +9,11 @@ class Game {
             },
             multiplier: 1
         },
-        cohost: {
+        locations: {
             count: 0,
             uielements: {
-                counter: document.getElementById("cohost-counter"),
-                cost: document.getElementById("cohost-cost")
+                counter: document.getElementById("locations-counter"),
+                cost: document.getElementById("locations-cost")
             },
             multiplier: 1
         }

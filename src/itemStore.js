@@ -3,7 +3,7 @@ let itemStore = {
         cost: 15,
         autoProduce: 0.1
     },
-    cohost: {
+    locations: {
         cost: 100,
         autoProduce: 1
     }
