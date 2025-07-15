@@ -14,13 +14,13 @@ Download the repository, and double click on `src/index.html`. Have fun!
 
 ### Store Items
 
-| Store Item | Cost | EPS<sup>1</sup> | Reason why it produces episodes |
-|:--|:--|:--|:--|
-| Subscriber | 15 | 0.1 | You are so motivated, that producing episodes doesn't feel like producing them on your own. |
-| Location's | 100 | 1 | You gotta be somewhere. Fort Wayne, maybe, or trapped somewhere. |
-| High Quality Equipment | 1.100 | 8 | The better the quality, the easier production becomes |
-| Special Episodes | 12.000 | 47 | Special Episodes makes production motivating again. |
-| You Mothers | 130.000 | 260 | Can't have enough of those! |
+| Store Item | Cost | EPS<sup>1</sup> | Reason why it produces episodes | Implemented |
+|:--|:--|:--|:--|:--|
+| Subscriber | 15 | 0.1 | You are so motivated, that producing episodes doesn't feel like producing them on your own. | ✅ |
+| Locations | 100 | 1 | You gotta be somewhere. Fort Wayne, maybe, or trapped somewhere. | ✅ |
+| High Quality Equipment | 1.100 | 8 | The better the quality, the easier production becomes | - |
+| Special Episodes | 12.000 | 47 | Special Episodes makes production motivating again. | - |
+| You Mothers | 130.000 | 260 | Can't have enough of those! | - |
 
 <hr />
 <sup>1</sup> Episodes Per Second
