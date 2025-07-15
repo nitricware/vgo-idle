@@ -27,6 +27,14 @@ class Game {
                 cost: document.getElementById("johnsSmoker-cost")
             },
             remainingTime: []
+        },
+        michellesBraunLaser: {
+            count: 0,
+            uielements: {
+                counter: document.getElementById("michellesBraunLaser-counter"),
+                cost: document.getElementById("michellesBraunLaser-cost")
+            },
+            remainingTime: []
         }
     }
 
