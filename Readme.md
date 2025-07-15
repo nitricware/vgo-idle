@@ -14,9 +14,18 @@ Download the repository, and double click on `src/index.html`. Have fun!
 
 ### Store Items
 
-| Store Item | Cost | Auto Produce per Second | Reason why it produces episodes |
+| Store Item | Cost | EPS<sup>1</sup> | Reason why it produces episodes |
 |:--|:--|:--|:--|
 | Subscriber | 15 | 0.1 | You are so motivated, that producing episodes doesn't feel like producing them on your own. |
-| Co-Hosts | 100 | 1 | Producing episodes together speeds up the process. |
+| Tiger | 100 | 1 | Well, it's Tiger. |
 | High Quality Equipment | 1.100 | 8 | The better the quality, the easier production becomes |
 | Special Episodes | 12.000 | 47 | Special Episodes makes production motivating again. |
+
+<hr />
+<sup>1</sup> Episodes Per Second
+
+### Ideas
+
+- Unklock hosts (current and historical): Hosts grant special production for a limited time;
+- Unlock Mixer: ???
+- Unlock John's Smoker: Boots someone's EPS

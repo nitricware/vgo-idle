@@ -1,4 +1,4 @@
-let storeItems = {
+let itemStore = {
     subscriber: {
         cost: 15,
         autoProduce: 0.1

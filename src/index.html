@@ -5,8 +5,11 @@
     </head>
 </html>
 <body>
+    <h1>Episodes</h1>
     <button id="produce-episode" onclick="g.produceEpisode()">Produce Episode</button> <span id="episodes-per-second">0</span> Episodes per Second ...
     <span id="episode-counter">0</span> Episodes<br />
+
+    <h1>Item Store</h1>
 
     <button id="buy-subscriber" onclick="g.buy('subscriber')">Buy Subscriber</button> for <span id="subscriber-cost">100</span> Episodes ... 
     <span id="subscriber-counter">0</span> Subscriber<br />
@@ -14,7 +17,13 @@
     <button id="buy-cohost" onclick="g.buy('cohost')">Buy Co-Host</button> for <span id="cohost-cost">100</span> Episodes ... 
     <span id="cohost-counter">0</span> Co-Hosts<br />
 
-    <script src="storeItems.js"></script>
+    <h1>Boost Store</h1>
+
+    <button id="buy-johnsSmoker" onclick="g.buyBoost('johnsSmoker')">Buy John's Smoker</button> for <span id="johnsSmoker-cost">100</span> Episodes ... 
+    <span id="johnsSmoker-counter">0</span> John's Smoker<br />
+
+    <script src="itemStore.js"></script>
+    <script src="boostStore.js"></script>
     <script src="Game.js"></script>
     <script src="main.js"></script>
 </body>
