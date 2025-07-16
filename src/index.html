@@ -5,6 +5,10 @@
     </head>
 </html>
 <body>
+    <div class="topBar">
+        <button id="save" onclick="g.save()">Save</button> Last Save <span id="lastSave">none</span>
+        <button id="load" onclick="g.load()">Load</button>
+    </div>
     <h1>Episodes</h1>
     <button id="produce-episode" onclick="g.produceEpisode()">Produce Episode</button> <span id="episodes-per-second">0</span> Episodes per Second ...
     <span id="episode-counter">0</span> Episodes<br />

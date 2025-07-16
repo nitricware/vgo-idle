@@ -3,18 +3,10 @@ class Game {
     production = {
         subscriber: {
             count: 0,
-            uielements: {
-                counter: document.getElementById("subscriber-counter"),
-                cost: document.getElementById("subscriber-cost")
-            },
             multiplier: 1
         },
         locations: {
             count: 0,
-            uielements: {
-                counter: document.getElementById("locations-counter"),
-                cost: document.getElementById("locations-cost")
-            },
             multiplier: 1
         }
     }
@@ -22,31 +14,81 @@ class Game {
     boosts = {
         johnsSmoker: {
             count: 0,
-            uielements: {
-                counter: document.getElementById("johnsSmoker-counter"),
-                cost: document.getElementById("johnsSmoker-cost")
-            },
             remainingTime: []
         },
         michellesBraunLaser: {
             count: 0,
-            uielements: {
-                counter: document.getElementById("michellesBraunLaser-counter"),
-                cost: document.getElementById("michellesBraunLaser-cost")
-            },
             remainingTime: []
         }
     }
 
+    uiElements = {
+        episodeCounter: document.getElementById("episode-counter"),
+        episodesPerSecond: document.getElementById("episodes-per-second"),
+        lastSave: document.getElementById("lastSave"),
+        items: {
+            subscriber: {
+                counter: document.getElementById("subscriber-counter"),
+                cost: document.getElementById("subscriber-cost")
+            },
+            locations: {
+                counter: document.getElementById("locations-counter"),
+                cost: document.getElementById("locations-cost")
+            }
+        },
+        boosts: {
+            johnsSmoker: {
+                counter: document.getElementById("johnsSmoker-counter"),
+                cost: document.getElementById("johnsSmoker-cost")
+            },
+            michellesBraunLaser: {
+                counter: document.getElementById("michellesBraunLaser-counter"),
+                cost: document.getElementById("michellesBraunLaser-cost")
+            }
+        }
+    }
+
     lastTick = 0;
+    lastSave = null;
 
     priceMultiplierBase = 1.15;
 
     currentProduction = 0.0;
 
-    uiElements = {
-        episodeCounter: document.getElementById("episode-counter"),
-        episodesPerSecond: document.getElementById("episodes-per-second")
+    constructor() {
+        const lastSaveString = localStorage.getItem("lastSave");
+        this.lastSave = lastSaveString === null ? null : new Date(Date.parse(lastSaveString));
+        this.updateUI();
+    }
+
+    save() {
+        console.log("save...")
+
+        localStorage.setItem("episodes", this.episodes);
+        localStorage.setItem("production", JSON.stringify(this.production));
+        localStorage.setItem("boosts", JSON.stringify(this.boosts));
+        localStorage.setItem("itemStore", JSON.stringify(itemStore));
+        localStorage.setItem("boostStore", JSON.stringify(boostStore));
+        localStorage.setItem("currentProduction", this.currentProduction);
+
+        saveDate = new Date();
+
+        localStorage.setItem("lastSave", saveDate.toString());
+
+        this.lastSave = saveDate.toString();
+    }
+
+    load() {
+        console.log("load...")
+
+        this.episodes = parseFloat(localStorage.getItem("episodes"));
+        this.production = JSON.parse(localStorage.getItem("production"));
+        this.boosts = JSON.parse(localStorage.getItem("boosts"));
+        itemStore = JSON.parse(localStorage.getItem("itemStore"));
+        boostStore = JSON.parse(localStorage.getItem("boostStore"));
+        this.currentProduction = parseFloat(localStorage.getItem("currentProduction"));
+
+        this.updateUI();
     }
 
     tick(currentTick) {
@@ -111,15 +153,16 @@ class Game {
     updateUI() {
         this.uiElements.episodeCounter.innerHTML = Math.floor(this.episodes);
         this.uiElements.episodesPerSecond.innerHTML = this.currentProduction.toFixed(2);
+        this.uiElements.lastSave.innerHTML = this.lastSave == null ? "none" : this.lastSave;
 
         for (let e in this.production) {
-            this.production[e].uielements.counter.innerHTML = this.production[e].count;
-            this.production[e].uielements.cost.innerHTML = Math.ceil(itemStore[e].cost);
+            this.uiElements.items[e].counter.innerHTML = this.production[e].count;
+            this.uiElements.items[e].cost.innerHTML = Math.ceil(itemStore[e].cost);
         }
 
         for (let b in this.boosts) {
-            this.boosts[b].uielements.counter.innerHTML = this.boosts[b].count;
-            this.boosts[b].uielements.cost.innerHTML = Math.ceil(boostStore[b].cost);
+            this.uiElements.boosts[b].counter.innerHTML = this.boosts[b].count;
+            this.uiElements.boosts[b].cost.innerHTML = Math.ceil(boostStore[b].cost);
         }
     }
 }
