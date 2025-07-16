@@ -5,15 +5,18 @@
     </head>
 </html>
 <body>
+    <h1>VGO Idle Clicker</h1>
     <div class="topBar">
         <button id="save" onclick="g.save()">Save</button> Last Save <span id="lastSave">none</span>
         <button id="load" onclick="g.load()">Load</button>
     </div>
-    <h1>Episodes</h1>
+    <h2>Messages</h2>
+    <textarea id="errorLog" cols="100" rows="5"></textarea>
+    <h2>Episodes</h2>
     <button id="produce-episode" onclick="g.produceEpisode()">Produce Episode</button> <span id="episodes-per-second">0</span> Episodes per Second ...
     <span id="episode-counter">0</span> Episodes<br />
 
-    <h1>Item Store</h1>
+    <h2>Item Store</h2>
 
     <button id="buy-subscriber" onclick="g.buy('subscriber')">Buy Subscriber</button> for <span id="subscriber-cost">100</span> Episodes ... 
     <span id="subscriber-counter">0</span> Subscriber<br />
@@ -21,7 +24,7 @@
     <button id="buy-locations" onclick="g.buy('locations')">Buy Location</button> for <span id="locations-cost">100</span> Episodes ... 
     <span id="locations-counter">0</span> Locations<br />
 
-    <h1>Boost Store</h1>
+    <h2>Boost Store</h2>
 
     <button id="buy-johnsSmoker" onclick="g.buyBoost('johnsSmoker')">Buy John's Smoker</button> for <span id="johnsSmoker-cost">100</span> Episodes ... 
     <span id="johnsSmoker-counter">0</span> John's Smoker<br />
@@ -29,8 +32,32 @@
     <button id="buy-michellesBraunLaser" onclick="g.buyBoost('michellesBraunLaser')">Buy Michelle's Braun Laser</button> for <span id="michellesBraunLaser-cost">100</span> Episodes ... 
     <span id="michellesBraunLaser-counter">0</span> Michelle's Braun Laser<br />
 
+    <h2>Hosts</h2>
+
+    <h3>Host 1: <span id="host1-displayName">none</span></h3>
+        <select id="host1-select"  onchange="g.changeHost('slot1', this.value)">
+            <option value="none">none</option>
+            <option value="john">John</option>
+            <option value="michelle">Michelle</option>
+        </select>
+    <h3>Host 2: <span id="host2-displayName">none</span></h3>
+         <select id="host2-select"  onchange="g.changeHost('slot2', this.value)">
+            <option value="none">none</option>
+            <option value="john">John</option>
+            <option value="michelle">Michelle</option>
+        </select>
+    <h3>Host 3: <span id="host3-displayName">none</span></h3>
+        <select id="host3-select"  onchange="g.changeHost('slot3', this.value)">
+            <option value="none">none</option>
+            <option value="john">John</option>
+            <option value="michelle">Michelle</option>
+        </select>
+
     <script src="itemStore.js"></script>
     <script src="boostStore.js"></script>
+    <script src="hostsStore.js"></script>
     <script src="Game.js"></script>
+    <script src="GameState.js"></script>
+    <script src="GameUI.js"></script>
     <script src="main.js"></script>
 </body>
