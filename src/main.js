@@ -1,4 +1,5 @@
-let g = new Game();
+let s = new GameState();
+let g = new Game(s);
 
 function gameLoop (timeStamp) {
     g.tick(timeStamp)

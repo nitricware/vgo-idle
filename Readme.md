@@ -25,6 +25,50 @@ Download the repository, and double click on `src/index.html`. Have fun!
 <hr />
 <sup>1</sup> Episodes Per Second
 
+### Hosts Store
+
+There are three hosts slots. Each host grants unique perks. Those perks can apply as soon as the host is appointed (i.e. a one time episodes boost or boosting a specific item), during each calculation (i.e. boosting production rate) or on dismissal of the host.
+
+| Host | Appointment | Episode Modifier | Boost Modifier | Dismissal |
+|:--|:--|:--|:--|:--|
+| John | - | - | Boosts `johnsSmoker`'s item multiplier by 100 and reduces it's cost by 100. | - |
+| Michelle | - | - | - | - |
+| Kyle | - | - | - | - |
+| Matt | - | - | - | - |
+| Ry | - | - | - | - |
+| Kevin | - | - | - | - |
+| Turkey | - | - | - | - |
+| Witch | - | - | - | - |
+
+
+#### Technical Mechanism
+
+The `hostsStore` object in `src/hostsStore.js` lists all hosts. each host has three functions:
+
+```javascript
+var hosts = {
+    someHost: {
+        appoint: function(state) {
+            // called when the user appoints the host
+            boostStore.johnsSmoker.cost = boostStore.johnsSmoker.cost - 100
+            boostStore.johnsSmoker.itemMultiplier = boostStore.johnsSmoker.itemMultiplier + 100
+        },
+        dismiss: function(state) {
+            // called when the user dismisses the host
+            boostStore.johnsSmoker.cost = boostStore.johnsSmoker.cost + 100
+            boostStore.johnsSmoker.itemMultiplier = boostStore.johnsSmoker.itemMultiplier - 100
+        },
+        productionModifier: function(state) {
+            // called in Game.calculateEpisodes() before the final caluclation of the produced episodes in the current tick
+            state.episodes = state.episodes + 10
+            state.currentProduction = state.currentProduction * 1.1
+        }
+    }
+}
+```
+
+
+
 ### Ideas
 
 - Boost (functionality: done) - temporarily boosts store item's EPS
