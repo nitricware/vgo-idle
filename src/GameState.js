@@ -1,5 +1,6 @@
 class GameState {
     episodes = 200.0;
+    clickStrength = 1;
     currentProduction = 0.0;
     lastSave = null;
     
@@ -44,6 +45,7 @@ class GameState {
 
     save() {
         localStorage.setItem("episodes", this.episodes);
+        localStorage.setItem("clickStrength", this.clickStrength);
         localStorage.setItem("currentProduction", this.currentProduction);
         localStorage.setItem("production", JSON.stringify(this.items));
         localStorage.setItem("boosts", JSON.stringify(this.boosts));
@@ -59,6 +61,7 @@ class GameState {
 
     load() {
         this.episodes = parseFloat(localStorage.getItem("episodes"));
+        this.clickStrength = parseFloat(localStorage.getItem("clickStrength"));
         this.currentProduction = parseFloat(localStorage.getItem("currentProduction"));
         this.items = JSON.parse(localStorage.getItem("production"));
         this.boosts = JSON.parse(localStorage.getItem("boosts"));

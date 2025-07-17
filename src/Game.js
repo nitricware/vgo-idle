@@ -3,9 +3,11 @@ class Game {
 
     uiElements = {
         episodeCounter: document.getElementById("episode-counter"),
+        produceEpisode: document.getElementById("produce-episode"),
         episodesPerSecond: document.getElementById("episodes-per-second"),
         lastSave: document.getElementById("lastSave"),
         errorLog: document.getElementById("errorLog"),
+        quote: document.getElementById("quote"),
         items: {
             subscriber: {
                 counter: document.getElementById("subscriber-counter"),
@@ -43,8 +45,7 @@ class Game {
     }
 
     lastTick = 0;
-    lastSave = null;
-
+    tenSecondsCounter = 0;
     priceMultiplierBase = 1.15;
 
     constructor(gameState) {
@@ -56,13 +57,20 @@ class Game {
         let timePassed = (currentTick - this.lastTick) / 1000;
         this.lastTick = currentTick;
 
+        this.tenSecondsCounter = this.tenSecondsCounter + timePassed;
+
+        if (this.tenSecondsCounter >= 10) {
+            this.tenSecondsCounter = 0;
+            this.roatateQuote();
+        }
+
         this.calculateEpisodes(timePassed);
         this.calculateBoost(timePassed);
         this.updateUI();
     }
 
     produceEpisode() {
-        this.state.episodes = this.state.episodes + 1;
+        this.state.episodes = this.state.episodes + (1 * this.state.clickStrength);
         this.updateUI();
     }
 
@@ -86,6 +94,10 @@ class Game {
         this.state.currentProduction = 0.0
         for (let e in this.state.items) {
             this.state.currentProduction = this.state.currentProduction + (itemStore[e].autoProduce * this.state.items[e].count * this.state.items[e].multiplier);
+        }
+
+        if (this.state.currentProduction == 0.00) {
+            return
         }
 
         for (let h in this.state.hosts) {
@@ -158,6 +170,7 @@ class Game {
     }
 
     updateUI() {
+        this.uiElements.produceEpisode.innerHTML = "Produce " + this.state.clickStrength + " Episodes";
         this.uiElements.episodeCounter.innerHTML = Math.floor(this.state.episodes);
         this.uiElements.episodesPerSecond.innerHTML = this.state.currentProduction.toFixed(2);
         this.uiElements.lastSave.innerHTML = this.state.lastSave == null ? "none" : new Date(this.state.lastSave);
@@ -191,5 +204,13 @@ class Game {
                 }
             }
         }
+    }
+
+    roatateQuote() {
+        let quotes = [
+            "Drop the canadian looser.",
+            "Phil did it again!"
+        ]
+        this.uiElements.quote.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
     }
 }
