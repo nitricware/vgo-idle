@@ -29,16 +29,16 @@ Download the repository, and double click on `src/index.html`. Have fun!
 
 There are three hosts slots. Each host grants unique perks. Those perks can apply as soon as the host is appointed (i.e. a one time episodes boost or boosting a specific item), during each calculation (i.e. boosting production rate) or on dismissal of the host.
 
-| Host | Appointment | Episode Modifier | Boost Modifier | Dismissal |
-|:--|:--|:--|:--|:--|
-| John | - | - | Boosts `johnsSmoker`'s item multiplier by 100 and reduces it's cost by 100. | - |
-| Michelle | - | - | - | - |
-| Kyle | - | - | - | - |
-| Matt | - | - | - | - |
-| Ry | - | - | - | - |
-| Kevin | - | - | - | - |
-| Turkey | - | - | - | - |
-| Witch | - | - | - | - |
+| Host | Appointment | Episode Production | Dismissal |
+|:--|:--|:--|:--|
+| John | Boosts `johnsSmoker`'s item multiplier by 100 and reduces it's cost by 100. | - | - |
+| Michelle | - | - | - |
+| Kyle | - | 20% production increase. | - |
+| Matt | Increases click strength by 1. | - | Decreases Click Strength by 1 |
+| Ry | - | Random 1:10000 chance to get 100 episodes. | - |
+| Kevin | - | - | - |
+| Turkey | - | - | - |
+| Witch | - | - | - |
 
 
 #### Technical Mechanism
