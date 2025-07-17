@@ -31,15 +31,18 @@ class Game {
         hosts: {
             slot1: {
                 displayName: document.getElementById("host1-displayName"),
-                selectField: document.getElementById("host1-select")
+                selectField: document.getElementById("host1-select"),
+                hostPicture: document.getElementById("host1-picture")
             },
             slot2: {
                 displayName: document.getElementById("host2-displayName"),
-                selectField: document.getElementById("host2-select")
+                selectField: document.getElementById("host2-select"),
+                hostPicture: document.getElementById("host2-picture")
             },
             slot3: {
                 displayName: document.getElementById("host3-displayName"),
-                selectField: document.getElementById("host3-select")
+                selectField: document.getElementById("host3-select"),
+                hostPicture: document.getElementById("host3-picture")
             }
         }
     }
@@ -160,6 +163,8 @@ class Game {
             hostsStore[this.state.hosts[slot].identifier].dismiss(this.state);
         }
 
+        this.uiElements.hosts[slot].hostPicture.className = "host-picture host-" + newHost;
+
         this.state.hosts[slot].identifier = newHost == "none" ? null : newHost;
 
         if (newHost != "none") {
@@ -191,7 +196,7 @@ class Game {
     }
 
     showError(message) {
-        this.uiElements.errorLog.innerHTML = message + "\n" + this.uiElements.errorLog.innerHTML;
+        this.uiElements.errorLog.innerHTML = message + "<br />" + this.uiElements.errorLog.innerHTML;
     }
 
     blockHostInSelect(slot) {

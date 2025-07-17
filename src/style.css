@@ -1,0 +1,147 @@
+:root {
+    --vgo-primary: #5eb7af;
+    --vgo-secondary: #2e3031;
+    --vgo-tertiary: #8b1a11;
+    --vgo-light: #eeeeee;
+}
+
+body {
+    background-color: var(--vgo-secondary);
+    font-family: "Oswald", sans-serif;
+    color: white;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    background-color: var(--vgo-primary);
+}
+
+.topBar > div {
+    padding: 10px;
+}
+
+.topBar > .gameTitle {
+    font-size: 3em;
+}
+
+.quote {
+    text-align: center;
+    font-size: 1em;
+    color: var(--vgo-tertiary);
+    background-color: var(--vgo-light);
+    padding: 10px;;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+}
+
+.dashboard > .episodes {
+    width: 20%;
+    background-color: var(--vgo-primary);
+    padding: 10px;
+    text-align: center;
+}
+
+.dashboard > .episodes > .btn-episode {
+    background-color: var(--vgo-tertiary);
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5em;
+    padding: 10px;
+    margin:20px;
+    color: var(--vgo-light);
+}
+
+.dashboard > .hosts {
+    width: 80%;
+    background-color: var(--vgo-light);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard > .hosts > .host {
+    width: 30%;
+    text-align: center;
+    color: #000;
+}
+
+.dashboard > .hosts > .host > .host-picture  {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    background-image: url("images/host-none.png");
+    background-size: 200px 200px;
+}
+
+.dashboard > .hosts > .host > .host-picture.host-john {
+    background-image: url("images/host-john.png");
+    
+}
+
+.dashboard > .hosts > .host > .host-picture.host-michelle {
+    background-image: url("images/host-michelle.png");
+    
+}
+
+.dashboard > .episodes > #episode-counter {
+    font-size: 3em;
+}
+
+.shop {
+    width: 100%;
+}
+
+.shop > .messages {
+    height: 150px;
+    overflow: scroll;
+    padding: 10px;
+    background-color: var(--vgo-light);
+    color: var(--vgo-tertiary);
+    width: 100%;
+}
+
+.shop > .stores {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.shop > .stores > div > h2 {
+    font-size: 2.5em;
+}
+
+.shop > .stores > div {
+    width: 30%;
+}
+
+.shop > .stores > div > .shop-item-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.shop > .stores > div > .shop-item-container > .shop-item-counter {
+    width: 60%;
+    text-align: left;
+    font-size: 2em;
+}
+
+.shop > .stores > div > .shop-item-container > .shop-item-cost {
+    width: 40%;
+    text-align: left;
+    margin: auto;
+}
+
+.shop > .stores > div > .shop-item-container > .shop-item-cost > button {
+    background-color: var(--vgo-primary);
+    font-family: "Oswald", sans-serif;
+    font-size: 1em;
+}

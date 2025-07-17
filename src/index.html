@@ -3,65 +3,131 @@
     <head>
         <title>VGO Idle Clicker</title>
     </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </html>
 <body>
-    <h1>VGO Idle Clicker</h1>
+
+    
     <div class="topBar">
-        <button id="save" onclick="g.save()">Save</button> Last Save <span id="lastSave">none</span>
-        <button id="load" onclick="g.load()">Load</button>
+        <div class="gameTitle">VGO Idle Clicker</div>
+        <div class="saveState">
+            <button id="save" onclick="g.save()">Save</button> Last Save <span id="lastSave">none</span>
+            <button id="load" onclick="g.load()">Load</button>
+        </div>
     </div>
-    <span id="quote">It's the Video Game Outsiders Podcast you mothers!</span>
-    <h2>Messages</h2>
-    <textarea id="errorLog" cols="100" rows="5"></textarea>
-    <h2>Episodes</h2>
-    <button id="produce-episode" onclick="g.produceEpisode()">Produce Episode</button> <span id="episodes-per-second">0</span> Episodes per Second ...
-    <span id="episode-counter">0</span> Episodes<br />
 
-    <h2>Item Store</h2>
+    <div class="quote">
+        <span id="quote">It's the Video Game Outsiders Podcast you mothers!</span>
+    </div>
 
-    <button id="buy-subscriber" onclick="g.buy('subscriber')">Buy Subscriber</button> for <span id="subscriber-cost">100</span> Episodes ... 
-    <span id="subscriber-counter">0</span> Subscriber<br />
+    <div class="dashboard">
+        <div class="episodes">
+            <span id="episode-counter">0</span>
+            <br />
+            Episodes
+            <br />
+            <span id="episodes-per-second">0</span> EPS
+            <br />
+            <button id="produce-episode" onclick="g.produceEpisode()" class="btn-episode">Produce Episode</button> 
+        </div>
+        <div class="hosts">
+            <div class="host">
+                <div id="host1-picture" class="host-picture host-none"></div>
+                <span id="host1-displayName">none</span>
+                <br />
+                Host 1
+                <br />
+                <select id="host1-select"  onchange="g.changeHost('slot1', this.value)">
+                    <option value="none">none</option>
+                    <option value="john">John</option>
+                    <option value="michelle">Michelle</option>
+                    <option value="matt">Matt</option>
+                    <option value="ry">Ry</option>
+                    <option value="kyle">Kyle</option>
+                </select>
+            </div>
+            <div class="host">
+                <div id="host2-picture" class="host-picture host-none"></div>
+                <span id="host2-displayName">none</span>
+                <br />
+                Host 2
+                <br />
+                <select id="host2-select"  onchange="g.changeHost('slot2', this.value)">
+                    <option value="none">none</option>
+                    <option value="john">John</option>
+                    <option value="michelle">Michelle</option>
+                    <option value="matt">Matt</option>
+                    <option value="ry">Ry</option>
+                    <option value="kyle">Kyle</option>
+                </select>
+            </div>
+            <div class="host">
+                <div id="host3-picture" class="host-picture host-none"></div>
+                <span id="host3-displayName">none</span>
+                <br />
+                Host 3
+                <br />
+                <select id="host3-select"  onchange="g.changeHost('slot3', this.value)">
+                    <option value="none">none</option>
+                    <option value="john">John</option>
+                    <option value="michelle">Michelle</option>
+                    <option value="matt">Matt</option>
+                    <option value="ry">Ry</option>
+                    <option value="kyle">Kyle</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-    <button id="buy-locations" onclick="g.buy('locations')">Buy Location</button> for <span id="locations-cost">100</span> Episodes ... 
-    <span id="locations-counter">0</span> Locations<br />
-
-    <h2>Boost Store</h2>
-
-    <button id="buy-johnsSmoker" onclick="g.buyBoost('johnsSmoker')">Buy John's Smoker</button> for <span id="johnsSmoker-cost">100</span> Episodes ... 
-    <span id="johnsSmoker-counter">0</span> John's Smoker<br />
-
-    <button id="buy-michellesBraunLaser" onclick="g.buyBoost('michellesBraunLaser')">Buy Michelle's Braun Laser</button> for <span id="michellesBraunLaser-cost">100</span> Episodes ... 
-    <span id="michellesBraunLaser-counter">0</span> Michelle's Braun Laser<br />
-
-    <h2>Hosts</h2>
-
-    <h3>Host 1: <span id="host1-displayName">none</span></h3>
-        <select id="host1-select"  onchange="g.changeHost('slot1', this.value)">
-            <option value="none">none</option>
-            <option value="john">John</option>
-            <option value="michelle">Michelle</option>
-            <option value="matt">Matt</option>
-            <option value="ry">Ry</option>
-            <option value="kyle">Kyle</option>
-        </select>
-    <h3>Host 2: <span id="host2-displayName">none</span></h3>
-         <select id="host2-select"  onchange="g.changeHost('slot2', this.value)">
-            <option value="none">none</option>
-            <option value="john">John</option>
-            <option value="michelle">Michelle</option>
-            <option value="matt">Matt</option>
-            <option value="ry">Ry</option>
-            <option value="kyle">Kyle</option>
-        </select>
-    <h3>Host 3: <span id="host3-displayName">none</span></h3>
-        <select id="host3-select"  onchange="g.changeHost('slot3', this.value)">
-            <option value="none">none</option>
-            <option value="john">John</option>
-            <option value="michelle">Michelle</option>
-            <option value="matt">Matt</option>
-            <option value="ry">Ry</option>
-            <option value="kyle">Kyle</option>
-        </select>
+    <div class="shop">
+        <div class="messages" id="errorLog"></div>
+        <div class="stores">
+            <div class="item-store">
+                <h2>Items</h2>
+                <div class="shop-item-container">
+                    <div class="shop-item-counter">
+                        <span id="subscriber-counter">0</span>&nbsp;Subscriber
+                    </div>
+                    <div class="shop-item-cost">
+                        Buy <button id="buy-subscriber" onclick="g.buy('subscriber')">1 for <span id="subscriber-cost">100</span></button>
+                    </div>
+                </div>
+                <div class="shop-item-container">
+                    <div class="shop-item-counter">
+                        <span id="locations-counter">0</span>&nbsp;Locations
+                    </div>
+                    <div class="shop-item-cost">
+                        Buy <button id="buy-locations" onclick="g.buy('locations')">1 for <span id="locations-cost">100</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="boost-store">
+                <h2>Boosts</h2>
+                <div class="shop-item-container">
+                    <div class="shop-item-counter">
+                        <span id="johnsSmoker-counter">0</span>&nbsp;John's Smoker
+                    </div>
+                    <div class="shop-item-cost">
+                        Buy <button id="buy-johnsSmoker" onclick="g.buyBoost('johnsSmoker')">1 for <span id="johnsSmoker-cost">100</span></button>
+                    </div>
+                </div>
+                <div class="shop-item-container">
+                    <div class="shop-item-counter">
+                        <span id="michellesBraunLaser-counter">0</span>&nbsp;Michelle's Braun Laser
+                    </div>
+                    <div class="shop-item-cost">
+                        Buy <button id="buy-michellesBraunLaser" onclick="g.buyBoost('michellesBraunLaser')">1 for <span id="michellesBraunLaser-cost">100</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="upgrade-store">
+                <h2>Upgrades</h2>
+            </div>
+        </div>
+    </div>
 
     <script src="itemStore.js"></script>
     <script src="boostStore.js"></script>
