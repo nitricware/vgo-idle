@@ -41,12 +41,6 @@
                 Host 1
                 <br />
                 <select id="host1-select"  onchange="g.changeHost('slot1', this.value)">
-                    <option value="none">none</option>
-                    <option value="john">John</option>
-                    <option value="michelle">Michelle</option>
-                    <option value="matt">Matt</option>
-                    <option value="ry">Ry</option>
-                    <option value="kyle">Kyle</option>
                 </select>
             </div>
             <div class="host">
@@ -56,12 +50,6 @@
                 Host 2
                 <br />
                 <select id="host2-select"  onchange="g.changeHost('slot2', this.value)">
-                    <option value="none">none</option>
-                    <option value="john">John</option>
-                    <option value="michelle">Michelle</option>
-                    <option value="matt">Matt</option>
-                    <option value="ry">Ry</option>
-                    <option value="kyle">Kyle</option>
                 </select>
             </div>
             <div class="host">
@@ -71,12 +59,6 @@
                 Host 3
                 <br />
                 <select id="host3-select"  onchange="g.changeHost('slot3', this.value)">
-                    <option value="none">none</option>
-                    <option value="john">John</option>
-                    <option value="michelle">Michelle</option>
-                    <option value="matt">Matt</option>
-                    <option value="ry">Ry</option>
-                    <option value="kyle">Kyle</option>
                 </select>
             </div>
         </div>
@@ -85,44 +67,8 @@
     <div class="shop">
         <div class="messages" id="errorLog"></div>
         <div class="stores">
-            <div class="item-store">
-                <h2>Items</h2>
-                <div class="shop-item-container">
-                    <div class="shop-item-counter">
-                        <span id="subscriber-counter">0</span>&nbsp;Subscriber
-                    </div>
-                    <div class="shop-item-cost">
-                        Buy <button id="buy-subscriber" onclick="g.buy('subscriber')">1 for <span id="subscriber-cost">100</span></button>
-                    </div>
-                </div>
-                <div class="shop-item-container">
-                    <div class="shop-item-counter">
-                        <span id="locations-counter">0</span>&nbsp;Locations
-                    </div>
-                    <div class="shop-item-cost">
-                        Buy <button id="buy-locations" onclick="g.buy('locations')">1 for <span id="locations-cost">100</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="boost-store">
-                <h2>Boosts</h2>
-                <div class="shop-item-container">
-                    <div class="shop-item-counter">
-                        <span id="johnsSmoker-counter">0</span>&nbsp;John's Smoker
-                    </div>
-                    <div class="shop-item-cost">
-                        Buy <button id="buy-johnsSmoker" onclick="g.buyBoost('johnsSmoker')">1 for <span id="johnsSmoker-cost">100</span></button>
-                    </div>
-                </div>
-                <div class="shop-item-container">
-                    <div class="shop-item-counter">
-                        <span id="michellesBraunLaser-counter">0</span>&nbsp;Michelle's Braun Laser
-                    </div>
-                    <div class="shop-item-cost">
-                        Buy <button id="buy-michellesBraunLaser" onclick="g.buyBoost('michellesBraunLaser')">1 for <span id="michellesBraunLaser-cost">100</span></button>
-                    </div>
-                </div>
-            </div>
+            <div class="item-store" id="item-store"></div>
+            <div class="boost-store" id="boost-store"></div>
             <div class="upgrade-store">
                 <h2>Upgrades</h2>
             </div>
@@ -132,8 +78,10 @@
     <script src="itemStore.js"></script>
     <script src="boostStore.js"></script>
     <script src="hostsStore.js"></script>
+    <script src="quotes.js"></script>
+    <script src="Localization.js"></script>
+    <script src="GameUI.js"></script>
     <script src="Game.js"></script>
     <script src="GameState.js"></script>
-    <script src="GameUI.js"></script>
     <script src="main.js"></script>
 </body>

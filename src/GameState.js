@@ -1,5 +1,5 @@
 class GameState {
-    episodes = 200.0;
+    episodes = 20000.0;
     clickStrength = 1;
     currentProduction = 0.0;
     lastSave = null;

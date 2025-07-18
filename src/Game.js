@@ -53,6 +53,9 @@ class Game {
 
     constructor(gameState) {
         this.state = gameState;
+    }
+
+    start() {
         this.updateUI();
     }
 
@@ -211,11 +214,8 @@ class Game {
         }
     }
 
+    // TODO: refactor into GameUI()
     roatateQuote() {
-        let quotes = [
-            "Drop the canadian looser.",
-            "Phil did it again!"
-        ]
         this.uiElements.quote.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
     }
 }
